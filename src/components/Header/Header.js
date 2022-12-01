@@ -19,11 +19,11 @@ const Header = () => {
           <Logo />
         </Side>
         <DesktopNav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
+          <NavLink href="/sale">A Vendre</NavLink>
+          <NavLink href="/new">Nouvelles&nbsp;Versions</NavLink>
+          <NavLink href="/men">Hommes</NavLink>
+          <NavLink href="/women">Femmes</NavLink>
+          <NavLink href="/kids">Les Enfants</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </DesktopNav>
         <MobileNav>
@@ -61,9 +61,13 @@ const MainHeader = styled.div`
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
 
+  @media ${QUERIES.tabletAndDown} {
+    padding: 10px 24px;
+    height: revert;
+  }
+
   @media ${QUERIES.phoneAndDown} {
     padding: 10px 16px;
-    height: revert;
   }
 `;
 
@@ -72,7 +76,7 @@ const DesktopNav = styled.nav`
   gap: 48px;
   margin: 0px 48px;
 
-  @media ${QUERIES.phoneAndDown} {
+  @media ${QUERIES.tabletAndDown} {
     display: none;
   }
 `;
@@ -82,7 +86,7 @@ const MobileNav = styled.nav`
   display: none;
   gap: var(--gap);
 
-  @media ${QUERIES.phoneAndDown} {
+  @media ${QUERIES.tabletAndDown} {
     display: flex;
     margin-left: auto;
   }
@@ -90,7 +94,7 @@ const MobileNav = styled.nav`
 
 const Side = styled.div`
   flex: 1;
-  @media ${QUERIES.phoneAndDown} {
+  @media ${QUERIES.tabletAndDown} {
     flex: 0;
   }
 `;
@@ -101,6 +105,7 @@ const NavLink = styled.a`
   text-decoration: none;
   color: ${COLORS.gray[900]};
   font-weight: ${WEIGHTS.medium};
+  white-space: nowrap;
 
   &:first-of-type {
     color: ${COLORS.secondary};

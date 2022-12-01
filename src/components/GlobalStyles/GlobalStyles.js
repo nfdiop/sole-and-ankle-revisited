@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components/macro';
+import { createGlobalStyle } from "styled-components/macro";
 
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -71,6 +71,27 @@ html {
     Silence the warning about missing Reach Dialog styles
   */
   --reach-dialog: 1;
+}
+
+[data-reach-dialog-overlay] {
+    background: rgba(0,0,0,.33);
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+[data-reach-dialog-content] {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 80vw;
+  height: 100vw;
 }
 
 html, body, #root {
